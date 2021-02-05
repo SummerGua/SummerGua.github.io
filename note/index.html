@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工作笔记 | SummerGua</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" type="image/png" href="https://s3.ax1x.com/2021/01/21/shTlO1.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.992cb7aa.css" as="style"><link rel="preload" href="/assets/js/app.abcede92.js" as="script"><link rel="preload" href="/assets/js/2.336322e8.js" as="script"><link rel="preload" href="/assets/js/19.06f04e9b.js" as="script"><link rel="prefetch" href="/assets/js/10.18f11048.js"><link rel="prefetch" href="/assets/js/11.135a7edf.js"><link rel="prefetch" href="/assets/js/12.104aaccb.js"><link rel="prefetch" href="/assets/js/13.8afdc914.js"><link rel="prefetch" href="/assets/js/14.ddf08c74.js"><link rel="prefetch" href="/assets/js/15.dafc12d5.js"><link rel="prefetch" href="/assets/js/16.2a8233b3.js"><link rel="prefetch" href="/assets/js/17.180eccea.js"><link rel="prefetch" href="/assets/js/18.d6721287.js"><link rel="prefetch" href="/assets/js/20.9c638b14.js"><link rel="prefetch" href="/assets/js/21.24cb6850.js"><link rel="prefetch" href="/assets/js/3.bfd606c8.js"><link rel="prefetch" href="/assets/js/4.73f63c73.js"><link rel="prefetch" href="/assets/js/5.91c0db66.js"><link rel="prefetch" href="/assets/js/6.7f2a7c13.js"><link rel="prefetch" href="/assets/js/7.1a04d488.js"><link rel="prefetch" href="/assets/js/8.01855677.js"><link rel="prefetch" href="/assets/js/9.ac8302d6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.992cb7aa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">SummerGua</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myinfo/" class="nav-link">
+  AboutMe
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/myinfo/" class="nav-link">
+  AboutMe
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/interview/" class="sidebar-heading clickable open"><span>面经</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/JS/" class="sidebar-link">JS</a></li><li><a href="/interview/HTML/" class="sidebar-link">html</a></li><li><a href="/interview/explorer/" class="sidebar-link">浏览器</a></li><li><a href="/interview/css/" class="sidebar-link">CSS</a></li><li><a href="/interview/http/" class="sidebar-link">计算机网络</a></li><li><a href="/interview/project/" class="sidebar-link">项目</a></li><li><a href="/interview/suanfa/" class="sidebar-link">算法</a></li><li><a href="/interview/vue/" class="sidebar-link">vue</a></li><li><a href="/interview/write/" class="sidebar-link">手写系列</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/oneyear/" class="sidebar-heading clickable"><span>年终总结</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/note/" aria-current="page" class="active sidebar-link">工作笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note/#父子组件问题" class="sidebar-link">父子组件问题</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="工作笔记"><a href="#工作笔记" class="header-anchor">#</a> 工作笔记</h1> <h2 id="父子组件问题"><a href="#父子组件问题" class="header-anchor">#</a> 父子组件问题</h2> <p>在父组件中使用一个封装好的<code>el-rate</code>组件(此时名为<code>Stars</code>)时，修改星星数量会导致报错，是因为子组件局部值和<code>props</code>值都被修改，这种修改<code>props</code>值的方式是不被推荐的，需要在子组件中使用如下代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">{</span>
+    stars<span class="token operator">:</span><span class="token number">0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">updated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'star'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>stars<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>父组件如下调用：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Stars</span> <span class="token attr-name">@star</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>getStar<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Stars</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">{</span>
+    stars<span class="token operator">:</span><span class="token number">0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+methods<span class="token operator">:</span><span class="token punctuation">{</span>
+  <span class="token function">getStar</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stars <span class="token operator">=</span> data
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/oneyear/2020/" class="prev">
+        我的2020
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.abcede92.js" defer></script><script src="/assets/js/2.336322e8.js" defer></script><script src="/assets/js/19.06f04e9b.js" defer></script>
+  </body>
+</html>
